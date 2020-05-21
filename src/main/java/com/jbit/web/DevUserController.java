@@ -4,6 +4,7 @@ import com.jbit.pojo.DevUser;
 import com.jbit.service.DevUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -37,7 +38,7 @@ public class DevUserController {
      * @param session
      * @return
      */
-    @PostMapping("logout")
+    @GetMapping("logout")
     public String logout(HttpSession session){
         session.invalidate();
         return "redirect:/jsp/devlogin.jsp";
